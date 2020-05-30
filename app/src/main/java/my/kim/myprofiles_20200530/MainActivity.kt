@@ -17,7 +17,14 @@ class MainActivity : AppCompatActivity() {
 
         changeNickBtn.setOnClickListener {
 
+
+            var nickName = "myNickNameTxt.text.tostring()"
+
+            if(nickName= "본인 닉네임 표시") {
+
+            }
             val myIntent = Intent(this, EditNickNameActivity::class.java)
+            myIntent.putExtra("nowNick", nickName)
             startActivityForResult(myIntent, REQ_FOR_NICKNAME)
         }
 
@@ -27,6 +34,13 @@ class MainActivity : AppCompatActivity() {
             val myUri = Uri.parse("tel:${phoneNum.replace("-", "-")}")
             val myIntent = Intent(Intent.ACTION_DIAL, myUri)
             startActivity(myIntent)
+        }
+
+        smsBtn.setOnClickListener {
+            val phoneNum = phoneNumEdt.text.toString()
+            val content = contentEdit.text.toString()
+
+            val myUri = Uri.parse("smsto:$phoneNum")
         }
     }
 

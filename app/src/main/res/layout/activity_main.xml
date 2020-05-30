@@ -83,6 +83,7 @@
         android:orientation="horizontal">
 
         <EditText
+            android:id="@+id/contentEdit"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -90,6 +91,7 @@
             android:singleLine="true"/>
 
         <Button
+            android:id="@+id/smsBtn"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:text="문자전송"/>
